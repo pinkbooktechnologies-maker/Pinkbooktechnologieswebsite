@@ -8,8 +8,8 @@ const path = require("path");
 app.use(cors());
 app.use(express.json());
 
-// Serve static files from the public directory
-app.use(express.static(path.join(__dirname, "..", "public")));
+// Serve static files from the current directory
+app.use(express.static(__dirname));
 
 const transporter = nodemailer.createTransport({
     service: "gmail",

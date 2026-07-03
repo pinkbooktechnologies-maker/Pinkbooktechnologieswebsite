@@ -460,7 +460,7 @@ function initForms() {
   const formNote = document.getElementById('form-note');
   if (!contactForm || !formNote) return;
 
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     if (!contactForm.checkValidity()) {
@@ -475,12 +475,34 @@ function initForms() {
     submitBtn.disabled = true;
     btnText.textContent = 'Sending...';
 
-    setTimeout(() => {
-      formNote.textContent = "Thanks! Your message has been received — we'll be in touch within one business day.";
-      contactForm.reset();
+    try {
+      const formData = new FormData(contactForm);
+      const data = Object.fromEntries(formData.entries());
+
+      // For Vercel: API is at /api/send-message, local dev: /send-message
+      const apiUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+        ? '/send-message'
+        : '/api/send-message';
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        formNote.textContent = "Thanks! Your message has been received — we'll be in touch within one business day.";
+        contactForm.reset();
+      } else {
+        formNote.textContent = 'Server Error. Please try again later.';
+      }
+    } catch (err) {
+      formNote.textContent = 'Server Error. Please try again later.';
+    } finally {
       submitBtn.disabled = false;
       btnText.textContent = originalText;
-    }, 900);
+    }
   });
 
   const newsletterForm = document.getElementById('newsletter-form');
