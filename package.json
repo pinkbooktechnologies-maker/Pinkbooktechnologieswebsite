@@ -1,0 +1,21 @@
+{
+  "name": "pinkbook-technologies",
+  "version": "1.0.0",
+  "description": "PinkBook Technologies - IT Solutions, Design & Digital Media",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "node server/tests/contact-route.test.js",
+    "dev": "node server/server.js"
+  },
+  "keywords": ["pinkbook", "technology", "it-solutions", "website"],
+  "author": "PinkBook Technologies",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "nodemailer": "^9.0.2"
+  },
+  "devDependencies": {}
+}
