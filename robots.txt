@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pinkbooktechnologies.com/sitemap.xml
+Sitemap: https://www.pinkbooktechnologies.com/sitemap.xml

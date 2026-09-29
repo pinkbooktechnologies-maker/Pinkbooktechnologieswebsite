@@ -1,12 +1,9 @@
 {
   "name": "pinkbook-technologies",
   "version": "1.0.0",
-  "description": "PinkBook Technologies - IT Solutions, Design & Digital Media",
-  "main": "server.js",
+  "description": "PinkBook Technologies — AI product engineering website",
   "scripts": {
-    "start": "node server.js",
-    "test": "node server/tests/contact-route.test.js",
-    "dev": "node server.js"
+    "test": "node --check api/send-message.js && node --check script.js && node --check portfolio-studio.js"
   },
   "keywords": ["pinkbook", "technology", "it-solutions", "website"],
   "author": "PinkBook Technologies",
