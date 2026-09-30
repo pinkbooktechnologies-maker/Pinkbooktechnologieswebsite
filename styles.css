@@ -480,6 +480,7 @@ h3 {
   font-size: 18px;
   font-weight: 800;
   letter-spacing: -0.055em;
+  color: var(--pink);
 }
 
 .brand__name span {
