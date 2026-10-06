@@ -460,9 +460,35 @@ h3 {
 }
 
 .brand__mark {
-  width: 43px;
-  height: 43px;
-  flex: 0 0 43px;
+  position: relative;
+  width: 46px;
+  height: 50px;
+  flex: 0 0 46px;
+}
+
+.brand__orbit {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.brand__logo {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 74px;
+  height: 66px;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+}
+
+.brand--footer .brand__mark {
+  width: 50px;
+  height: 54px;
+  flex-basis: 50px;
 }
 
 .brand__mark-bg {
@@ -2616,7 +2642,8 @@ h3 {
 
   .section { padding: 88px 0; }
   .site-header { padding-inline:16px; }
-  .brand__mark { width:38px; height:38px; flex-basis:38px; }
+  .brand__mark { width:41px; height:44px; flex-basis:41px; }
+  .brand--footer .brand__mark { width:46px; height:50px; flex-basis:46px; }
   .brand__name { font-size:14px; }
   .menu-toggle { width:44px; height:44px; }
 
