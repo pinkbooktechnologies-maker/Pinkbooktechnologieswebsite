@@ -336,9 +336,15 @@ h3 {
   animation: intro-in 500ms 100ms var(--ease-out) forwards;
 }
 
-.intro__brand svg {
-  width: 52px;
-  height: 52px;
+.intro__brand .brand__mark--intro {
+  width: 64px;
+  height: 69px;
+  flex-basis: 64px;
+}
+
+.intro__brand .brand__logo {
+  width: 102px;
+  height: 91px;
 }
 
 .intro__brand p {
